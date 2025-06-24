@@ -1,10 +1,9 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import LandingPage from "@/components/Landing";
 
 export default function Home() {
   return (
     <div>
-      <Button>Hello Ankit</Button>
+      <LandingPage/>
     </div>
   );
 }

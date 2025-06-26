@@ -80,7 +80,7 @@ export default function LandingPage() {
                 <h3 className="text-lg md:text-xl font-bold mb-1 text-light-tertiary mt-3">
                   {box.value}
                 </h3>
-                <p className="text-xs md:text-sm text-light-primary">
+                <p className="text-xs md:text-sm text-center text-light-primary">
                   {box.label}
                 </p>
               </div>

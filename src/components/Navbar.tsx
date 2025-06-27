@@ -20,13 +20,13 @@ export default function Navbar() {
     <div className= {`h-20 w-full flex items-center justify-between p-3 bg-transparent fixed z-50 ${scrolled
           ? 'bg-white/30 backdrop-blur-md shadow-md'
           : 'bg-transparent'}`}>
-      <h1 className="text-4xl md:ml-15 font-bold text-[#103B56]">AutoWrite</h1>
-      <div className="flex gap-7 items-center">
+      <h1 className="md:text-4xl text-3xl ml-2 md:ml-15 font-bold text-[#103B56]">AutoWrite</h1>
+      <div className="flex md:gap-7 gap-2 items-center">
         <Link
           href={"https://github.com/i-ankit01"}
           className="flex items-center space-x-1 p-1 sm:p-2 rounded-lg sm:rounded-xl transition-all duration-300 text-light-tertiary hover:bg-primary/15"
         >
-          <Github className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
+          <Github className="sm:w-5 sm:h-5 md:w-6 md:h-6" />
 
           <div className="hidden text-xs sm:inline-block">
             Proudly Open Source

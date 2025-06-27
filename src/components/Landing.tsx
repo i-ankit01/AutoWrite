@@ -37,13 +37,13 @@ export default function LandingPage() {
   return (
     <>
       <Navbar />
-      <section className="relative min-h-screen w-full flex flex-col items-center pt-20 pb-20 md:pt-32 md:pb-40 overflow-hidden">
+      <section className="relative min-h-screen w-full flex flex-col items-center pl-6 pr-6 pt-20 pb-20 md:pt-32 md:pb-40 overflow-hidden">
         {/* Gradient background */}
         <div className="fixed inset-0 bg-gradient-to-br from-light-tertiary/90 via-light-background to-light-tertiary/40 z-[-1]" />
 
         <div>
           <Button
-            className="bg-primary/20 hover:bg-primary/30 border-primary cursor-pointer hover:scale-105 font-semibold"
+            className="bg-primary/20 hover:bg-primary/30 border-primary cursor-pointer hover:scale-105 font-semibold mt-10 md:mt-0"
             variant={"outline"}
           >
             Generate - Post - Grow
@@ -51,27 +51,27 @@ export default function LandingPage() {
         </div>
 
         <div>
-          <h1 className="text-6xl text-center font-bold text-primary mt-10 ">
-            Enhance Your Social Growth <br /> With{" "}
+          <h1 className="md:text-6xl text-[40px] tracking-tight text-center font-bold text-primary md:mt-10 mt-5 ">
+            Enhance Your <br /> Social Growth With {" "}
             <span className="highlight hover:scale-105 transition duration-200 cursor-pointer">
               AutoWrite
             </span>{" "}
             AI
           </h1>
         </div>
-        <h2 className="mt-15 text-lg text-primary font-semibold text-center">
+        <h2 className="md:mt-15 mt-7 text-lg text-primary font-semibold text-center">
           Generate high quality content using AI in seconds.
         </h2>
-        <div className="mt-15">
+        <div className="md:mt-15 mt-7">
           <Button className="w-38 cursor-pointer flex items-center gap-2 py-5">
             Get Started <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
 
-        <div className="mt-10 flex gap-7 items-center">
+        <div className="mt-10 flex flex-col md:flex-row gap-7 items-center">
           {stats.map((box, index) => (
             <div
-              className={` w-64 p-4 md:p-6 rounded-2xl border backdrop-blur-sm bg-gradient-to-br border-light-primary/10 hover:border-light-primary/20 transition-all duration-300 hover:shadow-lg ${box.gradient} cursor-pointer`}
+              className={` md:w-64 w-72 border border-primary p-4 md:p-6 rounded-2xl border backdrop-blur-sm bg-gradient-to-br border-light-primary/10 hover:border-light-primary/20 transition-all duration-300 hover:shadow-lg ${box.gradient} cursor-pointer`}
             >
               <div className="flex flex-col items-center">
                 <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center bg-light-primary/20">

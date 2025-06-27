@@ -20,7 +20,7 @@ export default function Navbar() {
     <div className= {`h-20 w-full flex items-center justify-between p-3 bg-transparent fixed z-50 ${scrolled
           ? 'bg-white/30 backdrop-blur-md shadow-md'
           : 'bg-transparent'}`}>
-      <h1 className="md:text-4xl text-3xl ml-2 md:ml-15 font-bold text-[#103B56]">AutoWrite</h1>
+      <h1 className="md:text-4xl text-3xl ml-2 md:ml-15 font-bold text-black/70">AutoWrite</h1>
       <div className="flex md:gap-7 gap-2 items-center">
         <Link
           href={"https://github.com/i-ankit01"}

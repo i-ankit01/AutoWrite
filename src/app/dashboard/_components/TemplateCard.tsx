@@ -1,9 +1,10 @@
 import React from "react";
-import { TEMPLATE } from "./TemplateList";
+import { TEMPLATE } from "./TemplateListSection";
+import Link from "next/link";
 
 const TemplateCard = ({ item }: { item: TEMPLATE }) => {
   return (
-    <div className="w-72 p-4 md:p-6 rounded-2xl border border-primary backdrop-blur-sm bg-gradient-to-br border-light-primary/10 hover:border-light-primary/20 transition-all duration-300 hover:shadow-lg from-light-primary/20 to-light-secondary/20 hover:scale-102 cursor-pointer">
+    <Link href={"/dashboard/content/" + item.slug} className="w-72 p-4 md:p-6 rounded-2xl border border-primary backdrop-blur-sm bg-gradient-to-br border-light-primary/10 hover:border-light-primary/20 transition-all duration-300 hover:shadow-lg from-light-primary/20 to-light-secondary/20 hover:scale-102 cursor-pointer">
       <div className="flex flex-col items-center">
         <div className="w-10 h-10 md:w-17 md:h-17 rounded-xl flex items-center justify-center bg-light-primary/20">
           <item.icon />
@@ -15,7 +16,7 @@ const TemplateCard = ({ item }: { item: TEMPLATE }) => {
           {item.description}
         </p>
       </div>
-    </div>
+    </Link>
   );
 };
 

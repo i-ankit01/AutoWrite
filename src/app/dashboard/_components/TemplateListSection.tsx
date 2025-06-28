@@ -18,19 +18,23 @@ export interface FORM {
   name: string;
   required: boolean;
 }
-export default function TemplateListSection({userSearchInput} : {userSearchInput : string | undefined}) {
+export default function TemplateListSection({
+  userSearchInput,
+}: {
+  userSearchInput: string | undefined;
+}) {
+  const [templateList, setTemplateList] = useState(TemplateArray);
 
-  const [templateList , setTemplateList] = useState(TemplateArray)
-
-  useEffect(()=>{
-    if(userSearchInput){
-      const filterData = TemplateArray.filter((item)=>(item.name.toLowerCase().includes(userSearchInput.toLowerCase())))
-      setTemplateList(filterData)
+  useEffect(() => {
+    if (userSearchInput) {
+      const filterData = TemplateArray.filter((item) =>
+        item.name.toLowerCase().includes(userSearchInput.toLowerCase())
+      );
+      setTemplateList(filterData);
+    } else {
+      setTemplateList(TemplateArray);
     }
-    else{
-      setTemplateList(TemplateArray)
-    }
-  },[userSearchInput])
+  }, [userSearchInput]);
   return (
     <div className="flex flex-wrap gap-4 ">
       {templateList.map((item, index) => (

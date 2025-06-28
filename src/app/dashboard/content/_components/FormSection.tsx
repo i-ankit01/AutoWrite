@@ -26,10 +26,10 @@ import Link from "next/link";
 // Learn why we not simply accepted selectedTemplate : TEMPLATE as this
 interface PROPS {
   selectedTemplate?: TEMPLATE;
-  userFormInput ?:any
+  userFormInput?: any;
 }
 
-const FormSection = ({ selectedTemplate , userFormInput }: PROPS) => {
+const FormSection = ({ selectedTemplate, userFormInput }: PROPS) => {
   // this is done because the icons was (FC) which is supported in server component and hence not getting passed from Template.ts (server) --> this FormSection (client)
   const ICONS: Record<
     string,
@@ -60,50 +60,53 @@ const FormSection = ({ selectedTemplate , userFormInput }: PROPS) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    userFormInput(formData)
+    userFormInput(formData);
   };
 
   return (
     <div>
       <Link href={"/dashboard"}>
-            <Button className="cursor-pointer" > <ArrowLeft/> Back</Button>
-      </Link>
-    <div className="p-5 shadow-md border rounded-lg flex flex-col bg-white md:mt-5 ">
-      <div className="w-10 h-10 md:w-17 md:h-17 rounded-xl flex items-center justify-center bg-light-primary/20">
-        {Icon && <Icon />}
-      </div>
-      <h1 className="font-bold text-2xl md:mt-3 md:mb-3 text-primary">
-        {selectedTemplate?.name}
-      </h1>
-      <p className="text-gray-500 text-sm mb-3">
-        {selectedTemplate?.description}
-      </p>
-      <form className="mt-3" onSubmit={handleSubmit}>
-        {selectedTemplate?.form?.map((item, index) => (
-          <div key={index} className="my-2 flex flex-col gap-2 mb-2">
-            <label className="font-semibold">{item.label}</label>
-            {item.field == "input" ? (
-              <Input
-                name={item.name}
-                className="shadow-primary"
-                onChange={handleInputChange}
-                required={item.required}
-              />
-            ) : (
-              <Textarea 
-              name={item.name}
-              className="shadow-primary min-h-[8rem]"
-              onChange={handleInputChange}
-              required={item.required}
-               />
-            )}
-          </div>
-        ))}
-        <Button type="submit" className="w-full py-6 mt-5 cursor-pointer">
-          Generate Content
+        <Button className="cursor-pointer">
+          {" "}
+          <ArrowLeft /> Back
         </Button>
-      </form>
-    </div>
+      </Link>
+      <div className="p-5 shadow-md border rounded-lg flex flex-col bg-white md:mt-5 ">
+        <div className="w-10 h-10 md:w-17 md:h-17 rounded-xl flex items-center justify-center bg-light-primary/20">
+          {Icon && <Icon />}
+        </div>
+        <h1 className="font-bold text-2xl md:mt-3 md:mb-3 text-primary">
+          {selectedTemplate?.name}
+        </h1>
+        <p className="text-gray-500 text-sm mb-3">
+          {selectedTemplate?.description}
+        </p>
+        <form className="mt-3" onSubmit={handleSubmit}>
+          {selectedTemplate?.form?.map((item, index) => (
+            <div key={index} className="my-2 flex flex-col gap-2 mb-2">
+              <label className="font-semibold">{item.label}</label>
+              {item.field == "input" ? (
+                <Input
+                  name={item.name}
+                  className="shadow-primary"
+                  onChange={handleInputChange}
+                  required={item.required}
+                />
+              ) : (
+                <Textarea
+                  name={item.name}
+                  className="shadow-primary min-h-[8rem]"
+                  onChange={handleInputChange}
+                  required={item.required}
+                />
+              )}
+            </div>
+          ))}
+          <Button type="submit" className="w-full py-6 mt-5 cursor-pointer">
+            Generate Content
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };

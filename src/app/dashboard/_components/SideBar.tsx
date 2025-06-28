@@ -37,7 +37,7 @@ const SideBar = () => {
         {MenuList.map((menu, index) => (
           <div
             key={index}
-            className={`flex items-center justify-left gap-4 font-semibold mb-4 ${
+            className={`flex items-center justify-left gap-4 font-semibold mb-4 p-2 ${
               path == menu.path ? "hover:bg-primary" : "hover:bg-neutral-200"
             } cursor-pointer p-1 rounded-lg text-xl ${
               path == menu.path && "bg-primary text-white"

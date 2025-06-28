@@ -6,7 +6,7 @@ export interface TEMPLATE {
   name: string;
   description: string;
   category: string;
-  icon: FC;
+  icon: string;
   aiPrompt: string;
   slug: string;
   form?: FORM[];

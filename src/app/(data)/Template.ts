@@ -1,25 +1,11 @@
-import {
-  BlogIcon,
-  LinkTreeLogo,
-  LinkedInLogo,
-  XLogo,
-  YoutubeLogo,
-  Help,
-  Question,
-  Code,
-  IdeaLogo,
-  FileText,
-  NewspaperLogo,
-  Email,
-  GooglePlay,
-} from "./Icon";
+
 const TemplateArray = [
   {
     name: "Blog Generator",
     description:
       "An AI tool to generate perfect and engaging blogs according to your niche.",
     category: "Blog",
-    icon: BlogIcon,
+    icon: "blog",
     aiPrompt: "",
     slug: "generate-blog",
     form: [
@@ -42,7 +28,7 @@ const TemplateArray = [
     description:
       "Generate code snippets or full components instantly based on your requirement and language.",
     category: "Development",
-    icon: Code,
+    icon: "code",
     aiPrompt: "",
     slug: "generate-code",
     form: [
@@ -65,7 +51,7 @@ const TemplateArray = [
     description:
       "An AI tool to generate high quality and engaging video scripts for your youtube video",
     category: "youtube",
-    icon: YoutubeLogo,
+    icon: "youtube",
     aiPrompt: "",
     slug: "generate-yt-script",
     form: [
@@ -88,7 +74,7 @@ const TemplateArray = [
     description:
       "Create catchy and trendy captions for your Instagram, Twitter, or Facebook posts.",
     category: "Social Media",
-    icon: LinkTreeLogo,
+    icon: "linktree",
     aiPrompt: "",
     slug: "generate-social-caption",
     form: [
@@ -111,7 +97,7 @@ const TemplateArray = [
     description:
       "Write personalized and professional cold emails to reach out to prospects.",
     category: "Email",
-    icon: Email,
+    icon: "email",
     aiPrompt: "",
     slug: "generate-cold-email",
     form: [
@@ -134,7 +120,7 @@ const TemplateArray = [
     description:
       "Generate short, impactful, and trending tweets based on your topic or idea.",
     category: "Social Media",
-    icon: XLogo,
+    icon: "xlogo",
     aiPrompt: "",
     slug: "generate-twitter-post",
     form: [
@@ -158,7 +144,7 @@ const TemplateArray = [
     description:
       "Write professional and engaging LinkedIn posts to build your network and personal brand.",
     category: "Social Media",
-    icon: LinkedInLogo,
+    icon: "linkedin",
     aiPrompt: "",
     slug: "generate-linkedin-post",
     form: [
@@ -180,7 +166,7 @@ const TemplateArray = [
     name: "Resume Summary",
     description: "Generate a strong and professional summary for your resume.",
     category: "Career",
-    icon: FileText,
+    icon: "filetext",
     aiPrompt: "",
     slug: "generate-resume-summary",
     form: [
@@ -203,7 +189,7 @@ const TemplateArray = [
     description:
       "Craft a compelling introduction for your newsletter to hook your audience.",
     category: "Newsletter",
-    icon: NewspaperLogo,
+    icon: "newspaper",
     aiPrompt: "",
     slug: "generate-newsletter-intro",
     form: [
@@ -226,7 +212,7 @@ const TemplateArray = [
     description:
       "Generate thoughtful and helpful answers for your Quora questions.",
     category: "Q&A",
-    icon: Question,
+    icon: "question",
     aiPrompt: "",
     slug: "generate-quora-answer",
     form: [
@@ -249,7 +235,7 @@ const TemplateArray = [
     description:
       "Generate a crisp and convincing elevator pitch for your startup idea.",
     category: "Business",
-    icon: IdeaLogo,
+    icon: "idea",
     aiPrompt: "",
     slug: "generate-startup-pitch",
     form: [
@@ -272,7 +258,7 @@ const TemplateArray = [
     description:
       "Write a clear and attractive app description for Google Play or Apple App Store.",
     category: "App",
-    icon: GooglePlay,
+    icon: "googleplay",
     aiPrompt: "",
     slug: "generate-app-description",
     form: [
@@ -295,7 +281,7 @@ const TemplateArray = [
     description:
       "Automatically generate relevant FAQ questions and answers for your website or product.",
     category: "Website",
-    icon: Help,
+    icon: "help",
     aiPrompt: "",
     slug: "generate-faq",
     form: [

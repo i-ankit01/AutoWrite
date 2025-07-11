@@ -20,16 +20,17 @@ import {
   Email,
   GooglePlay,
 } from "@/app/(data)/Icon";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Loader2Icon } from "lucide-react";
 import Link from "next/link";
 
 // Learn why we not simply accepted selectedTemplate : TEMPLATE as this
 interface PROPS {
   selectedTemplate?: TEMPLATE;
   userFormInput?: any;
+  loading : boolean
 }
 
-const FormSection = ({ selectedTemplate, userFormInput }: PROPS) => {
+const FormSection = ({ selectedTemplate, userFormInput , loading }: PROPS) => {
   // this is done because the icons was (FC) which is supported in server component and hence not getting passed from Template.ts (server) --> this FormSection (client)
   const ICONS: Record<
     string,
@@ -102,7 +103,8 @@ const FormSection = ({ selectedTemplate, userFormInput }: PROPS) => {
               )}
             </div>
           ))}
-          <Button type="submit" className="w-full py-6 mt-5 cursor-pointer">
+          <Button type="submit" className="w-full py-6 mt-5 cursor-pointer" disabled={loading} >
+            {loading && <Loader2Icon className="animate-spin mr-1"/>}
             Generate Content
           </Button>
         </form>

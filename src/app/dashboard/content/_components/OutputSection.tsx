@@ -1,11 +1,21 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "@toast-ui/editor/dist/toastui-editor.css";
 import { Editor } from "@toast-ui/react-editor";
 import { Button } from "@/components/ui/button";
 import { Copy } from "lucide-react";
 
-const OutputSection = () => {
+interface props {
+  aiOutput : string;
+}
+
+const OutputSection = ({aiOutput} : props) => {
   const editorRef: any = useRef(null);
+
+  useEffect(()=>{
+    const editorInstance = editorRef.current.getInstance()
+    editorInstance.setMarkdown(aiOutput)
+  },[aiOutput])
+
   return (
     <div className="bg-white shadow-md rounded-lg w-200 mt-7">
       <div className="flex justify-between items-center p-5">
@@ -18,7 +28,7 @@ const OutputSection = () => {
       <Editor
         ref={editorRef}
         previewStyle="vertical"
-        height="600px"
+        height="570px"
         initialEditType="wysiwyg"
         useCommandShortcut={true}
         onChange={() =>

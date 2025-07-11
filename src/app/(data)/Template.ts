@@ -1,4 +1,3 @@
-
 const TemplateArray = [
   {
     name: "Blog Generator",
@@ -6,7 +5,8 @@ const TemplateArray = [
       "An AI tool to generate perfect and engaging blogs according to your niche.",
     category: "Blog",
     icon: "blog",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a perfect blog on this topic. It should cover every aspect in detail with proper headings, introduction, and conclusions.",
     slug: "generate-blog",
     form: [
       {
@@ -29,7 +29,8 @@ const TemplateArray = [
       "Generate code snippets or full components instantly based on your requirement and language.",
     category: "Development",
     icon: "code",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a code snippet or a complete functional component as per the provided description in the given programming language. Make sure it is optimized and properly structured.",
     slug: "generate-code",
     form: [
       {
@@ -52,7 +53,8 @@ const TemplateArray = [
       "An AI tool to generate high quality and engaging video scripts for your youtube video",
     category: "youtube",
     icon: "youtube",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a long script based on the topic and category provided, in a bit more detail. It should be engaging with a hook that raises a question in the audience's mind in the starting itself.",
     slug: "generate-yt-script",
     form: [
       {
@@ -75,7 +77,8 @@ const TemplateArray = [
       "Create catchy and trendy captions for your Instagram, Twitter, or Facebook posts.",
     category: "Social Media",
     icon: "linktree",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a catchy, trendy, and engaging caption for the described post or image on the specified social media platform. Keep it relevant to current trends, and make it short and impactful.",
     slug: "generate-social-caption",
     form: [
       {
@@ -98,7 +101,8 @@ const TemplateArray = [
       "Write personalized and professional cold emails to reach out to prospects.",
     category: "Email",
     icon: "email",
-    aiPrompt: "",
+    aiPrompt:
+      "Write a professional and personalized cold email addressed to a person in the given profession or business type. The email should clearly describe the product or purpose of outreach, sound convincing but not pushy, and include a clear call-to-action.",
     slug: "generate-cold-email",
     form: [
       {
@@ -121,7 +125,8 @@ const TemplateArray = [
       "Generate short, impactful, and trending tweets based on your topic or idea.",
     category: "Social Media",
     icon: "xlogo",
-    aiPrompt: "",
+    aiPrompt:
+      "Write a short, impactful, and trending Twitter post based on the given topic or idea. Keep the tone as specified if mentioned, otherwise default to an engaging and professional tone. Make sure it fits Twitter's character limit.",
     slug: "generate-twitter-post",
     form: [
       {
@@ -145,7 +150,8 @@ const TemplateArray = [
       "Write professional and engaging LinkedIn posts to build your network and personal brand.",
     category: "Social Media",
     icon: "linkedin",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a professional and engaging LinkedIn post based on the provided topic or experience and message. It should sound authentic, thoughtful, and help in building a personal brand or network.",
     slug: "generate-linkedin-post",
     form: [
       {
@@ -167,7 +173,8 @@ const TemplateArray = [
     description: "Generate a strong and professional summary for your resume.",
     category: "Career",
     icon: "filetext",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a professional and strong resume summary for a person working in the given career field. Highlight key skills and experience, keeping it concise yet impactful.",
     slug: "generate-resume-summary",
     form: [
       {
@@ -190,7 +197,8 @@ const TemplateArray = [
       "Craft a compelling introduction for your newsletter to hook your audience.",
     category: "Newsletter",
     icon: "newspaper",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a compelling and interesting introduction for a newsletter based on the given topic or theme and content description. Make sure it hooks the audience and clearly communicates the value of reading further.",
     slug: "generate-newsletter-intro",
     form: [
       {
@@ -213,7 +221,8 @@ const TemplateArray = [
       "Generate thoughtful and helpful answers for your Quora questions.",
     category: "Q&A",
     icon: "question",
-    aiPrompt: "",
+    aiPrompt:
+      "Write a thoughtful, helpful, and detailed answer to the given Quora question. Include your viewpoint or background to add authenticity, and ensure the answer adds value to the reader.",
     slug: "generate-quora-answer",
     form: [
       {
@@ -236,7 +245,8 @@ const TemplateArray = [
       "Generate a crisp and convincing elevator pitch for your startup idea.",
     category: "Business",
     icon: "idea",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a crisp, clear, and convincing elevator pitch for a startup idea. Include the name, the problem it solves, how it solves it, and make it sound appealing to investors or potential customers.",
     slug: "generate-startup-pitch",
     form: [
       {
@@ -259,7 +269,8 @@ const TemplateArray = [
       "Write a clear and attractive app description for Google Play or Apple App Store.",
     category: "App",
     icon: "googleplay",
-    aiPrompt: "",
+    aiPrompt:
+      "Write a clear, concise, and attractive app store description for the provided app name and functionality. Highlight the key features and benefits, making sure it grabs the user's attention.",
     slug: "generate-app-description",
     form: [
       {
@@ -282,7 +293,8 @@ const TemplateArray = [
       "Automatically generate relevant FAQ questions and answers for your website or product.",
     category: "Website",
     icon: "help",
-    aiPrompt: "",
+    aiPrompt:
+      "Generate a list of frequently asked questions (FAQs) and their answers based on the provided website or product name and its main features or services. Make sure they are relevant, helpful, and clear.",
     slug: "generate-faq",
     form: [
       {

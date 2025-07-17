@@ -14,15 +14,17 @@ datasource db {
 }
 
 model User {
-  id String @id
-  email String @unique
-  isSubscribed Boolean @default(false)
+  id               String    @id @default(uuid())
+  email            String    @unique
+  isSubscribed     Boolean   @default(false)
   subscriptionEnds DateTime?
-  history History[]
+  history          History[]
 }
 
 model History {
-  id String @id
-  user User @relation(fields: [userId], references: [id])
-  userId String
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  aiOutput  String
+  createdAt DateTime @default(now())
 }

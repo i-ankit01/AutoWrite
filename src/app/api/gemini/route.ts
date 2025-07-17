@@ -1,5 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
 export async function POST(req: NextRequest) {
   const { prompt } = await req.json();
@@ -29,9 +30,15 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// just for checking the server 
+// just for checking the db 
 export async function GET(req: NextRequest) {
+  const email:string = "ankit@gmail.com"
+  const user = await prisma.user.create({
+    data : {
+      email
+    }
+  })
   return NextResponse.json({
-    message: "server is running ",
-  });
+    "user created" : user
+  })
 }

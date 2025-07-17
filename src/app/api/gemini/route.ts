@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
+// just for checking the server 
 export async function GET(req: NextRequest) {
   return NextResponse.json({
     message: "server is running ",

@@ -15,7 +15,7 @@ const Header = ({setSearchValue}:any) => {
           />
         </div>
         <div>
-          <h2 className="ml-2 px-3 py-1 bg-primary text-white rounded-full flex items-center gap-3 cursor-pointer">
+          <h2 className="ml-2 px-3 py-1 bg-gradient-to-b from-primary/70 to-primary text-white rounded-full flex items-center gap-3 cursor-pointer">
             <Crown className="w-5"/>
             Upgrade to Premium
           </h2>

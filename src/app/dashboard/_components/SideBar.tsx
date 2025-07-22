@@ -31,16 +31,16 @@ const SideBar = () => {
   ];
 
   return (
-    <div className="h-screen p-5 border shadow-sm">
-      <div className="text-lg font-bold mb-15 border-b-2">AutoWrite</div>
+    <div className="h-screen p-2 border shadow-sm">
+      <div className="text-lg font-bold p-3 mb-15 border-b-2">AutoWrite</div>
       <div>
         {MenuList.map((menu, index) => (
           <div
             key={index}
-            className={`flex items-center justify-left gap-4 font-semibold mb-4 p-2 ${
-              path == menu.path ? "hover:bg-primary" : "hover:bg-neutral-200"
-            } cursor-pointer p-1 rounded-lg text-xl ${
-              path == menu.path && "bg-primary text-white"
+            className={`flex items-center justify-left gap-4 font-semibold mb-2 pl-3 pt-1 pb-1 ${
+              path == menu.path ? "hover:bg-gradient-to-b from-primary/70 to-primary text-white" : "hover:bg-neutral-200"
+            } cursor-pointer p-1 rounded-lg text-lg ${
+              path == menu.path && "bg-gradient-to-b from-primary/70 to-primary text-white"
             }`}
           >
             <menu.icon />

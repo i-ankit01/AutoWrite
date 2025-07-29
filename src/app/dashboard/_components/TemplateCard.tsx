@@ -40,20 +40,29 @@ const TemplateCard = ({ item }: { item: TEMPLATE }) => {
   const Icon = item?.icon ? ICONS[item.icon] : null;
   return (
     <Link
-      href={"/dashboard/content/" + item.slug}
-      className="w-72 p-4 md:p-6 rounded-2xl border border-primary backdrop-blur-sm bg-gradient-to-br border-light-primary/10 hover:border-light-primary/20 transition-all duration-300 hover:shadow-lg from-light-primary/20 to-light-secondary/20 hover:scale-102 cursor-pointer"
+      href={`/dashboard/content/${item.slug}`}
+      className="group relative w-72 p-6 rounded-2xl border border-primary/70 bg-white/80 backdrop-blur-sm hover:bg-white/90 transition-all duration-500 hover:shadow-lg hover:shadow-black-200/20 hover:-translate-y-1 cursor-pointer overflow-hidden"
     >
-      <div className="flex flex-col items-center">
-        <div className="w-10 h-10 md:w-17 md:h-17 rounded-xl flex items-center justify-center bg-light-primary/20">
-          {Icon && <Icon />}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="relative flex flex-col items-center text-center">
+        <div className="relative mb-4">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200/80 flex items-center justify-center shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:scale-105">
+            {Icon && (
+              <Icon className="w-7 h-7 text-slate-600 group-hover:text-slate-700 transition-colors duration-300" />
+            )}
+          </div>
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-slate-200/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
         </div>
-        <h3 className="text-lg md:text-[20px] font-bold mb-1 text-light-tertiary mt-3">
+        <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-slate-900 transition-colors duration-300">
           {item.name}
         </h3>
-        <p className="text-xs md:text-sm text-center font-semibold text-light-primary">
+
+        <p className="text-sm text-slate-600 font-medium leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
           {item.description}
         </p>
       </div>
+
+      <div className="absolute inset-0 rounded-2xl border border-slate-300/0 group-hover:border-slate-300/30 transition-all duration-500" />
     </Link>
   );
 };

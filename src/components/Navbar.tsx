@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
 
+
 export default function Navbar() {
     const [scrolled , setScrolled] = useState(false)
       useEffect(() => {
@@ -32,9 +33,9 @@ export default function Navbar() {
             Proudly Open Source
           </div>
         </Link>
-        <div  className=" md:mr-10">
+        <Link href={"/auth/register"} className=" md:mr-10">
           <Button className="cursor-pointer">Sign Up</Button>
-          </div>
+          </Link>
       </div>
     </div>
   );

@@ -31,14 +31,14 @@ export async function POST(req: NextRequest) {
 }
 
 // just for checking the db 
-export async function GET(req: NextRequest) {
-  const email:string = "ankit@gmail.com"
-  const user = await prisma.user.create({
-    data : {
-      email
-    }
-  })
-  return NextResponse.json({
-    "user created" : user
-  })
-}
+// export async function GET(req: NextRequest) {
+//   const email:string = "ankit@gmail.com"
+//   const user = await prisma.user.create({
+//     data : {
+//       email
+//     }
+//   })
+//   return NextResponse.json({
+//     "user created" : user
+//   })
+// }

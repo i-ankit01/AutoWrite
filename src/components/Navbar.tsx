@@ -1,27 +1,37 @@
-'use client'
+"use client";
 
 import { Github } from "lucide-react";
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { useEffect, useState } from "react";
+import jwt from "jsonwebtoken";
 
+type NavPorps = {
+  isAuthenticated?: boolean;
+};
 
-export default function Navbar() {
-    const [scrolled , setScrolled] = useState(false)
-      useEffect(() => {
+export default function Navbar({ isAuthenticated }: NavPorps) {
+
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10); // Trigger after scrolling 10px
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <div className= {`h-20 w-full flex items-center justify-between p-3 bg-transparent fixed z-50 ${scrolled
-          ? 'bg-white/30 backdrop-blur-md shadow-md'
-          : 'bg-transparent'}`}>
-      <h1 className="md:text-4xl text-3xl ml-2 md:ml-15 font-bold text-black/70">AutoWrite</h1>
+    <div
+      className={`h-20 w-full flex items-center justify-between p-3 bg-transparent fixed z-50 ${
+        scrolled ? "bg-white/30 backdrop-blur-md shadow-md" : "bg-transparent"
+      }`}
+    >
+      <h1 className="md:text-4xl text-3xl ml-2 md:ml-15 font-bold text-black/70">
+        AutoWrite
+      </h1>
       <div className="flex md:gap-7 gap-2 items-center">
         <Link
           href={"https://github.com/i-ankit01"}
@@ -33,9 +43,11 @@ export default function Navbar() {
             Proudly Open Source
           </div>
         </Link>
-        <Link href={"/auth/register"} className=" md:mr-10">
-          <Button className="cursor-pointer">Sign Up</Button>
-          </Link>
+        <Link href={isAuthenticated ? "/dashboard" : "/auth/login"} className="md:mr-10">
+          <Button className="cursor-pointer">
+            {isAuthenticated ? "Go To Dashboard" : "Sign In"}
+          </Button>
+        </Link>
       </div>
     </div>
   );

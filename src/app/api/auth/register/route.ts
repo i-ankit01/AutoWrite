@@ -1,3 +1,4 @@
+import jwt from "jsonwebtoken";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/prisma"; // import prisma client instance
@@ -11,9 +12,23 @@ export async function POST(req: NextRequest) {
     const user = await prisma.user.create({
       data: { name, email, password: hashPass },
     });
-    return NextResponse.json({
+    const response = NextResponse.json({
       userCreated: user,
     });
+    const token = jwt.sign(user.id, process.env.JWT_SECRET!, {
+      expiresIn: "3d",
+    });
+
+    response.cookies.set("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+      path: "/",
+      maxAge: 60 * 60 * 24 * 3,
+    });
+
+    return response;
+
   } catch (error: any) {
     return NextResponse.json({ error });
   }

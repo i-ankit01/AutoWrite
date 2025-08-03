@@ -2,7 +2,6 @@ import { prisma } from "@/lib/prisma";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import { cookies } from "next/headers";
 
 export async function POST(req: NextRequest) {
   const { email, password } = await req.json();
@@ -41,7 +40,7 @@ export async function POST(req: NextRequest) {
   });
 
   response.cookies.set('token', token, {
-  httpOnly: false,  // allow access from document.cookie (for client side) although less secure
+  httpOnly: true,  // if false then allow access from document.cookie (for client side) although less secure
   secure: process.env.NODE_ENV === 'production',
   sameSite: 'lax',
   path: '/', // make cookie accessible at all the routess
